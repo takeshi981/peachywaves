@@ -1,0 +1,7 @@
+ 
+[theme]
+name=peachywaves
+description=Peach Waves Theme
+engine=web-greeter
+url=index.html
+session=bspwm

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+  <div class="header">
+      <span id="current_time" class="time"></span>
+    </div>
+<form class="login">
+  <input id="login_username" type="text" placeholder="Username">
+  <label for="login_username"><use  href="#user"></use></label>
+  <label for="login_password"><use href="#password"></use><i class="eye_closed_icon pw_hide"></i></label>
+  <input id="login_password" type="password" placeholder="Password" required onkeydown="handleEnter(event);">
+
+  <button id="login_button">Login</button>
+</form>
+
+
+
+
+
+
+
+
+<div class="container">
+  <form class="form">
+    <div class="selectbox selectbox--unselect" data-option="">
+      <div class="selectbox__displayWord">
+        -- Session --
+      </div>
+      <div class="option-container">
+
+      </div>
+    </div>
+
+  </form>
+</div>
+
+
+
+
+
+
+  <script type="text/javascript" src="js/mock.js"></script>
+   <script type="text/javascript" src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,299 @@
+@font-face {
+    font-family: 'Asap';
+    src: url("../static/Asap-VariableFont_wdth,wght.ttf") format('truetype');
+
+    font-weight: normal;
+    font-style: normal;
+}
+:root {
+    --select-theme: #ffe3de;
+    --select-theme-hover: #d18375;
+    --option-color: #0d323b;
+}
+
+body {
+    background-color: #f45b69;
+    font-family: "Asap", sans-serif;
+}
+
+.login {
+    overflow: hidden;
+    background-color: white;
+    padding: 40px 30px 30px 30px;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    -webkit-transition: -webkit-transform 300ms, box-shadow 300ms;
+    -moz-transition: -moz-transform 300ms, box-shadow 300ms;
+    transition: transform 300ms, box-shadow 300ms;
+    box-shadow: 5px 10px 10px rgba(2, 128, 144, 0.2);
+}
+.login::before, .login::after {
+    content: "";
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-top-left-radius: 40%;
+    border-top-right-radius: 45%;
+    border-bottom-left-radius: 35%;
+    border-bottom-right-radius: 40%;
+    z-index: -1;
+}
+.login::before {
+    left: 40%;
+    bottom: -130%;
+    background-color: rgba(69, 105, 144, 0.15);
+    -webkit-animation: wawes 6s infinite linear;
+    -moz-animation: wawes 6s infinite linear;
+    animation: wawes 6s infinite linear;
+}
+.login::after {
+    left: 35%;
+    bottom: -125%;
+    background-color: rgba(2, 128, 144, 0.2);
+    -webkit-animation: wawes 7s infinite;
+    -moz-animation: wawes 7s infinite;
+    animation: wawes 7s infinite;
+}
+.login > input {
+    font-family: "Asap", sans-serif;
+    display: block;
+    border-radius: 5px;
+    font-size: 16px;
+    background: white;
+    width: 100%;
+    border: 0;
+    padding: 10px 10px;
+    margin: 15px -10px;
+}
+.login > button {
+    font-family: "Asap", sans-serif;
+    cursor: pointer;
+    color: #fff;
+    font-size: 16px;
+    text-transform: uppercase;
+    width: 80px;
+    border: 0;
+    padding: 10px 0;
+    margin-top: 10px;
+    margin-left: -5px;
+    border-radius: 5px;
+    background-color: #f45b69;
+    -webkit-transition: background-color 300ms;
+    -moz-transition: background-color 300ms;
+    transition: background-color 300ms;
+}
+.login > button:hover {
+    background-color: #f24353;
+}
+
+@-webkit-keyframes wawes {
+    from {
+        -webkit-transform: rotate(0);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+@-moz-keyframes wawes {
+    from {
+        -moz-transform: rotate(0);
+    }
+    to {
+        -moz-transform: rotate(360deg);
+    }
+}
+@keyframes wawes {
+    from {
+        -webkit-transform: rotate(0);
+        -moz-transform: rotate(0);
+        -ms-transform: rotate(0);
+        -o-transform: rotate(0);
+        transform: rotate(0);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.6);
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    font-size: 12px;
+}
+
+.header {
+    height: 55px;
+}
+.time {
+    float: right;
+    line-height: 25px;
+    font-size: 11pt;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+
+
+
+
+.container {
+    position: absolute;
+    width: 300px;
+    right: 0px;
+    bottom: 50%;
+    padding: 32px;
+}
+.container__title {
+    font-size: 25px;
+    font-weight: 600;
+    margin: 16px;
+    text-align: center;
+}
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.selectbox {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    max-width: 300px;
+}
+.option-container {
+    background-color: var(--select-theme);
+    color: var(--option-color);
+    width: 100%;
+    max-height: 0;
+    opacity: 0;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.selectbox--active .option-container {
+    max-height: 240px;
+    opacity: 1;
+    overflow-y: scroll;
+}
+
+.selectbox__displayWord,
+.option-container__option {
+    padding: 12px 24px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.selectbox__displayWord {
+    position: relative;
+    background-color: var(--select-theme);
+    color: var(--option-color);
+    border-radius: 8px;
+    height: 40px;
+}
+.selectbox__displayWord::after {
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    content: "";
+    background: url(".arrow_down");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    height: 16px;
+    width: 16px;
+    color: #f5f6fa;
+    transform: translateY(-50%);
+    transition: all 0.4s;
+}
+.selectbox--active .selectbox__displayWord::after {
+    transform: translateY(-50%) rotateZ(180deg);
+}
+.selectbox--unselect .selectbox__displayWord {
+    color: gray;
+}
+.selectbox--shake {
+    animation: shake 0.3s forwards;
+}
+.option-container {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+}
+.option-container__option:hover {
+    background-color: var(--select-theme-hover);
+}
+.option__radio {
+    display: none;
+}
+.option__label {
+    cursor: pointer;
+}
+
+.form__submit-button {
+    height: 40px;
+    padding: 12px;
+    outline: 0;
+    border: none;
+    border-radius: 8px;
+    margin-left: 20px;
+    background-color: rgb(187, 67, 59);
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.form__submit-button:hover {
+    background-color: rgb(255, 252, 241);
+    color: black;
+}
+
+@keyframes shake {
+    10%,
+    90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+
+    20%,
+    80% {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    30%,
+    50%,
+    70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+
+    40%,
+    60% {
+        transform: translate3d(4px, 0, 0);
+    }
+}
+
+
+
+#touch {position: absolute; opacity: 0; height: 0px;}
+
+#touch:checked + .slide {height: 300px;}
+
+
+
+
+.eye_light_icon{content: url("../static/icons/eye_light_icon.png"); width: 20px; height: 20px; position: absolute; right: 30px; cursor: pointer; padding: 10px 0 0 0 ;}
+.eye_closed_icon{content: url("../static/icons/eye_closed_icon.png"); width: 20px; height: 20px; position: absolute; right: 30px; cursor: pointer; padding: 10px 0 0 0 ;}
