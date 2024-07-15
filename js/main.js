@@ -55,7 +55,7 @@ let default_session = lightdm.default_session;
 
              // Assuming default_session is meant to store the label for later use
              default_session = label.innerHTML;
-             alert(default_session);
+             
              // Alerts the text content of the label
 
          } else {
